@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import connectToDb from './db/connect';
 import user from './routes/user.routes';
+import group from './routes/group';
 
 import Validation from 'express-validation';
 
@@ -15,6 +16,7 @@ server.use(bodyParser.urlencoded({
 }));
 
 server.use(user);
+server.use(group);
 
 
 server.use((e, req, res, next) => {
